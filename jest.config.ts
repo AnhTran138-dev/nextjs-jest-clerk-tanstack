@@ -18,6 +18,8 @@ const config: Config = {
     "src/components/**/*.{ts,tsx}",
     "!src/components/ui/**/*.{ts,tsx}",
   ],
+
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
