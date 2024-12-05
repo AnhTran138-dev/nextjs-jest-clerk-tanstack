@@ -1,25 +1,25 @@
 export const setItem = (key: string, value: unknown) => {
   try {
-    window.localStorage.setItem(key, JSON.stringify(value));
+    window.localStorage.setItem(key, JSON.stringify(value))
   } catch (error) {
-    console.log(error);
+    throw new Error(`LocalStorage Error: ${error}`)
   }
-};
+}
 
 export const getItem = (key: string) => {
   try {
-    const item = window.localStorage.getItem(key);
+    const item = window.localStorage.getItem(key)
 
-    return item ? JSON.parse(item) : undefined;
+    return item ? JSON.parse(item) : undefined
   } catch (error) {
-    console.log(error);
+    throw new Error(`LocalStorage Error: ${error}`)
   }
-};
+}
 
 export const removeItem = (key: string) => {
   try {
-    window.localStorage.removeItem(key);
+    window.localStorage.removeItem(key)
   } catch (error) {
-    console.log(error);
+    throw new Error(`LocalStorage Error: ${error}`)
   }
-};
+}

@@ -1,25 +1,25 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { useSidebar } from "@/components/sidebar/sidebar-context";
-import { Menu, X } from "lucide-react";
+import React from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { cn } from "@/lib/utils"
+import { useSidebar } from "@/components/sidebar/sidebar-context"
+import { Menu, X } from "lucide-react"
 
 export const MobileSidebar = ({
   className,
   children,
   ...props
 }: React.ComponentProps<"div">) => {
-  const { open, setOpen } = useSidebar();
+  const { open, setOpen } = useSidebar()
 
   return (
     <div
       className={cn(
-        "h-10 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full",
+        "flex h-10 w-full flex-row items-center justify-between bg-neutral-100 px-4 py-4 dark:bg-neutral-800 md:hidden",
         className
       )}
       {...props}
     >
-      <div className="flex justify-end z-20 w-full">
+      <div className="z-20 flex w-full justify-end">
         <Menu
           className="text-neutral-800 dark:text-neutral-200"
           onClick={() => setOpen(!open)}
@@ -33,7 +33,7 @@ export const MobileSidebar = ({
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn(
-              "fixed h-full w-full inset-0 bg-white dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+              "fixed inset-0 z-[100] flex h-full w-full flex-col justify-between bg-white p-10 dark:bg-neutral-900",
               className
             )}
           >
@@ -48,5 +48,5 @@ export const MobileSidebar = ({
         )}
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}

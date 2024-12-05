@@ -1,5 +1,5 @@
-import { SidebarProvider } from "@/components/sidebar/sidebar-context";
-import React from "react";
+import { SidebarProvider } from "@/components/sidebar/sidebar-context"
+import React from "react"
 
 export const Sidebar = ({
   children,
@@ -7,14 +7,14 @@ export const Sidebar = ({
   setOpen,
   animate,
 }: {
-  children: React.ReactNode;
-  open?: boolean;
-  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-  animate?: boolean;
+  children: React.ReactNode
+  open?: boolean
+  setOpen?: React.Dispatch<React.SetStateAction<boolean>>
+  animate?: boolean
 }) => {
   return (
     <SidebarProvider open={open} setOpen={setOpen} animate={animate}>
       {children}
     </SidebarProvider>
-  );
-};
+  )
+}

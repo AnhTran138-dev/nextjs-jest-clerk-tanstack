@@ -1,0 +1,6 @@
+# Ignore artifacts:
+build
+.swc
+coverage
+node_modules
+.next
