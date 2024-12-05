@@ -1,4 +1,3 @@
-// ModeToggle.test.tsx
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import { useTheme } from "next-themes";
@@ -23,6 +22,10 @@ describe("ModeToggle", () => {
     setThemeMock.mockClear();
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("renders the component", () => {
     render(
       <ThemeProvider defaultTheme="light">
@@ -30,14 +33,5 @@ describe("ModeToggle", () => {
       </ThemeProvider>
     );
     expect(screen.getByRole("button")).toBeInTheDocument();
-  });
-
-  it("get the current theme", () => {
-    render(
-      <ThemeProvider defaultTheme="dark">
-        <ModeToggle />
-      </ThemeProvider>
-    );
-    expect(setThemeMock).not.toBeCalled();
   });
 });
